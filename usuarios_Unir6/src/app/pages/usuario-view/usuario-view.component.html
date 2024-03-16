@@ -1,5 +1,16 @@
 <section class="container mt-3">
-    <div class="card shadow">
-
+    <div class="card shadow p-3">
+        <div class="row">
+            <figure class="col-12 col-md-3">
+                <img class="img-fluid" [src]="unUsuario.image" [alt]="unUsuario.username">
+            </figure>
+            <div class="col-12 col-md-9">
+                <h2>Nombre: {{unUsuario.first_name}}</h2>
+                <p>Apellidos: {{unUsuario.last_name}}</p>
+                <p>Email: {{unUsuario.email}}</p>
+                <p>Usuario: {{unUsuario.username}}</p>
+                <app-botones [Users]="'view'" [idUsuario]="miUsuario._id"></app-botones>
+            </div>
+        </div>
     </div>
 </section>

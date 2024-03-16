@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-between gap-2">
+    <a class="btn btn-secondary" [routerLink]="['/usuario', idUsuario]">Información</a>
+    <a  class="btn btn-secondary" [routerLink]="['/Usuarios']">Volver</a>
+    <a  class="btn btn-warning" [routerLink]="['/update/Usuario', idUsuario]">Actualizar</a>
+    <button class="btn btn-danger" (click)="eliminarUsuario()">Eliminar</button>
+</div>
