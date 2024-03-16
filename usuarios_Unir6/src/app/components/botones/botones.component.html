@@ -1,6 +1,10 @@
-<div class="d-flex justify-content-between gap-2">
+<div class="d-flex gap-2">
+    @if(parent === 'card'){
     <a class="btn btn-secondary" [routerLink]="['/usuario', idUsuario]">Información</a>
+    } @else if (parent === 'view'){
     <a  class="btn btn-secondary" [routerLink]="['/Usuarios']">Volver</a>
-    <a  class="btn btn-warning" [routerLink]="['/update/Usuario', idUsuario]">Actualizar</a>
-    <button class="btn btn-danger" (click)="eliminarUsuario()">Eliminar</button>
+
+    }
+    <a  class="btn btn-warning" [routerLink]="['/update', 'Usuario', idUsuario]">Actualizar</a>
+    <button class="btn btn-danger" (click)="eliminarUsuario(idUsuario)">Eliminar</button>
 </div>

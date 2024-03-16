@@ -1,5 +1,23 @@
 <section class="container mt-3">
     <div class="card shadow p-3">
+      <div class="row">
+        <figure class="col-12 col-md-3">
+          <img class="img-fluid" [src]="unUsuario.image" [alt]="unUsuario.username">
+        </figure>
+        <div class="col-12 col-md-9">
+          <h2>{{unUsuario.last_name}}</h2>
+          <p>Canal de retrasmision: {{unUsuario.last_name}}</p>
+          <p>Director: {{unUsuario.email}}</p>
+          <p>Puntuacion: {{unUsuario.username}}</p>
+          <app-botones [parent]="'view'" [idUsuario]="unUsuario._id"></app-botones>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+<!--<section class="container mt-3">
+    <div class="card shadow p-3">
         <div class="row">
             <figure class="col-12 col-md-3">
                 <img class="img-fluid" [src]="unUsuario.image" [alt]="unUsuario.username">
@@ -9,8 +27,8 @@
                 <p>Apellidos: {{unUsuario.last_name}}</p>
                 <p>Email: {{unUsuario.email}}</p>
                 <p>Usuario: {{unUsuario.username}}</p>
-                <app-botones [Users]="'view'" [idUsuario]="miUsuario._id"></app-botones>
+                <app-botones [parent]="'view'" [idUsuario]="unUsuario._id"></app-botones>
             </div>
         </div>
     </div>
-</section>
+</section>-->

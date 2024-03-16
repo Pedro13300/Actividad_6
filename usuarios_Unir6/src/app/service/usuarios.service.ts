@@ -14,17 +14,12 @@ export class UsuariosService {
   getAll(): Promise<any> {
   return lastValueFrom(this.httpClient.get<any>(this.baseUrl))
   }
-
-  /*getAll(): Observable<IUsuario[]> {
-    return this.httpClient.get<IUsuario[]>(this.baseUrl)
-  }
- 
-  getAllPromises(): Promise<IUsuario[]> {
-    return lastValueFrom(this.httpClient.get<IUsuario[]>(this.baseUrl))
-  }*/
   
   getById(id:string) : Promise<IUsuario> {
     return lastValueFrom(this.httpClient.get<IUsuario>(`${this.baseUrl}/${id}`))
 
+  }
+  delete(id: string | undefined ): Promise<IUsuario> {
+    return lastValueFrom(this.httpClient.delete<IUsuario>(`${this.baseUrl}/${id}`))
   }
 }

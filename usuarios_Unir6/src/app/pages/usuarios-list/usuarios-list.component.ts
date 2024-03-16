@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { IUsuario } from '../../interfaces/iusuario.interface';
 import { UsuarioCardComponent } from '../../componets/usuario-card/usuario-card.component';
 import { UsuariosService } from '../../service/usuarios.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios-list',
   standalone: true,
-  imports: [UsuarioCardComponent],
+  imports: [UsuarioCardComponent, RouterLink],
   templateUrl: './usuarios-list.component.html',
   styleUrl: './usuarios-list.component.css'
 })

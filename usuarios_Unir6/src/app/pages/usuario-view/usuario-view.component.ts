@@ -4,6 +4,7 @@ import { IUsuario } from '../../interfaces/iusuario.interface';
 import { UsuariosService } from '../../service/usuarios.service';
 import { BotonesComponent } from '../../components/botones/botones.component';
 
+
 @Component({
   selector: 'app-usuario-view',
   standalone: true,
@@ -22,7 +23,7 @@ export class UsuarioViewComponent {
       this.activatedRoute.params.subscribe(async (params: any) => {
         const id = params.idusuario;
         try {
-          this.unUsuario = await this.usuariosService.getById(id)
+          this.unUsuario = await this.usuariosService.getById(id);
         } catch (error) {
           console.log(error)
         }
