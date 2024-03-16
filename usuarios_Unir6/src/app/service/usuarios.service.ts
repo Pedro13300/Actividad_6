@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { Observable, lastValueFrom } from 'rxjs';
 import { IUsuario } from '../interfaces/iusuario.interface';
 
 @Injectable({
@@ -8,11 +8,16 @@ import { IUsuario } from '../interfaces/iusuario.interface';
   
 })
 export class UsuariosService {
-  httpClient = Inject(HttpClient);
-  baseUrl = 'https://peticiones.online/api/users';
+  httpClient = inject(HttpClient)
+  baseUrl = 'https://peticiones.online/api/users'
 
+  getAll(): Observable<IUsuario[]> {
+    return this.httpClient.get<IUsuario[]>(this.baseUrl)
+  }
  
   getAllPromises(): Promise<IUsuario[]> {
-    return lastValueFrom(this.httpClient.get<IUsuario[]>(this.baseUrl));
+    return lastValueFrom(this.httpClient.get<IUsuario[]>(this.baseUrl))
   }
+  
+  
 }

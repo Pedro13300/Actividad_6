@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { UsuariosService } from '../../service/usuarios.service';
 import { IUsuario } from '../../interfaces/iusuario.interface';
 import { UsuarioCardComponent } from '../../componets/usuario-card/usuario-card.component';
+import { UsuariosService } from '../../service/usuarios.service';
 
 @Component({
   selector: 'app-usuarios-list',
@@ -15,6 +15,10 @@ export class UsuariosListComponent {
   arrUsuarios: IUsuario[] = [];
 
   ngOnInit(): void {
+    this.usuariosService.getAll().subscribe((data: IUsuario[]) => {
+      this.arrUsuarios = data;
+    });
 
   }
+  
 }
