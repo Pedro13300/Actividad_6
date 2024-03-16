@@ -4,9 +4,9 @@ import { UsuarioViewComponent } from './pages/usuario-view/usuario-view.componen
 
 export const routes: Routes = [
     {path: "", pathMatch: "full", redirectTo: "usuarios"},
-    {path: "usuarios", component: UsuariosListComponent},
-    {path: "usuarios/:id", component: UsuarioViewComponent}
-];
+    {path: "usuarios", component: UsuariosListComponent,},
+    {path: "usuario/:id", component: UsuarioViewComponent}
+    ];
 
 
 

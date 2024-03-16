@@ -14,11 +14,19 @@ export class UsuariosListComponent {
   usuariosService = inject(UsuariosService);
   arrUsuarios: IUsuario[] = [];
 
-  ngOnInit(): void {
-    this.usuariosService.getAll().subscribe((data: IUsuario[]) => {
-      this.arrUsuarios = data;
+  async ngOnInit(): Promise<void> {
+    try{
+      await this.usuariosService.getAll().then((res) => {
+        this.arrUsuarios = res.results
+        console.log(this.arrUsuarios)
+      },
+    (error) => {
+      console.error('Pon un mensaje de error:', error);
     });
-
+    }
+    catch(error){
+      console.error('Pon un mensaje de error:', error);
+    }
   }
   
 }
