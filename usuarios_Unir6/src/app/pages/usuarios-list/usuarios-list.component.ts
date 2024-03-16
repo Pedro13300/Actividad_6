@@ -17,14 +17,12 @@ export class UsuariosListComponent {
   async ngOnInit(): Promise<void> {
     try{
       await this.usuariosService.getAll().then((res) => {
-        this.arrUsuarios = res.results
-        console.log(this.arrUsuarios)
+        this.arrUsuarios = res.results;
       },
     (error) => {
       console.error('Pon un mensaje de error:', error);
     });
-    }
-    catch(error){
+    } catch(error){
       console.error('Pon un mensaje de error:', error);
     }
   }
