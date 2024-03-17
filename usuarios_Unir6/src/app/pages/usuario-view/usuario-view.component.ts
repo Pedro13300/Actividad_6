@@ -24,6 +24,7 @@ export class UsuarioViewComponent {
       const id = params.idusuario;
       try {
         this.unUsuario = await this.usuariosService.getById(id)
+        console.log(this.unUsuario)
       } catch (error) {
         console.log(error)
       }
