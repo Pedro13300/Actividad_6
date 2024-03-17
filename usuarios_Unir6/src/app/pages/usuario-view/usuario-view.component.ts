@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { IUsuario } from '../../interfaces/iusuario.interface';
 import { UsuariosService } from '../../service/usuarios.service';
@@ -20,13 +20,14 @@ export class UsuarioViewComponent {
 
   ngOnInit(): void {
     
-      this.activatedRoute.params.subscribe(async (params: any) => {
-        const id = params.idusuario;
-        try {
-          this.unUsuario = await this.usuariosService.getById(id);
-        } catch (error) {
-          console.log(error)
-        }
-      })
+    this.activatedRoute.params.subscribe(async (params: any) => {
+      const id = params.idusuario;
+      try {
+        this.unUsuario = await this.usuariosService.getById(id)
+      } catch (error) {
+        console.log(error)
+      }
+    })
   }
 }
+
