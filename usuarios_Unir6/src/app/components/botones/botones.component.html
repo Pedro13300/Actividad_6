@@ -1,0 +1,9 @@
+<div class="d-flex gap-2">
+    @if(parent === 'card'){
+       <a class="btn btn-secondary" [routerLink]="['/usuario', idUsuario]"><i class="fa-solid fa-circle-info"></i> Información</a>
+    } @else if (parent === 'vista'){
+        <a class="btn btn-secondary" [routerLink]="['/usuarios', idUsuario]"><i class="fa-solid fa-arrow-rotate-left"></i> Volver</a>
+    }
+       <a  class="btn btn-warning" [routerLink]="['/update', 'usuario', idUsuario]"><i class="fa-solid fa-pen-to-square"></i> Actualizar</a>
+       <button class="btn btn-danger" (click)="eliminarUsuario(idUsuario)"><i class="fa-solid fa-trash-can"></i> Eliminar</button> 
+</div>

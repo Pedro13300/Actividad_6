@@ -12,16 +12,20 @@ export class UsuariosService {
   baseUrl = 'https://peticiones.online/api/users'
 
   getAll(): Promise<any> {
-  return lastValueFrom(this.httpClient.get<any>(this.baseUrl))
+  return lastValueFrom(this.httpClient.get<IUsuario>(this.baseUrl))
   }
+  
+  getById(id:string) : Promise<IUsuario> {
+    return lastValueFrom(this.httpClient.get<IUsuario>(`${this.baseUrl}/${id}`))
 
-  /*getAll(): Observable<IUsuario[]> {
-    return this.httpClient.get<IUsuario[]>(this.baseUrl)
   }
- 
-  getAllPromises(): Promise<IUsuario[]> {
-    return lastValueFrom(this.httpClient.get<IUsuario[]>(this.baseUrl))
-  }*/
-  
-  
+  delete(id: string | undefined ): Promise<IUsuario> {
+    return lastValueFrom(this.httpClient.delete<IUsuario>(`${this.baseUrl}/${id}`))
+  }
+  insert(formValue: IUsuario): Promise<IUsuario> {
+    return lastValueFrom(this.httpClient.post<IUsuario>(this.baseUrl, formValue))
+  }
+  update(formValue: IUsuario): Promise<IUsuario> {
+    return lastValueFrom(this.httpClient.put<IUsuario>(`${this.baseUrl}/${formValue._id}`, formValue))
+  }
 }

@@ -1,1 +1,20 @@
-<p>usuario-view works!</p>
+<section class="container mt-3">
+    <div class="card shadow p-3">
+      <div class="row">
+        <figure class="col-12 col-md-3">
+          <img class="img-fluid" src="{{unUsuario.image}}" alt="{{unUsuario._id}}">
+        </figure>
+        <div class="col-12 col-md-9">
+          <h2>Nombre: {{unUsuario.first_name}}</h2>
+          
+          <p>Apellidos: {{unUsuario.last_name}}</p>
+          <p>Email: {{unUsuario.email}}</p>
+          <p>Usuario: {{unUsuario.username}}</p>
+          
+          
+          <!--<app-botones [parent]="'vista'" [idUsuario]="unUsuario._id"></app-botones>-->
+        </div>
+        
+      </div>
+    </div>
+  </section>
