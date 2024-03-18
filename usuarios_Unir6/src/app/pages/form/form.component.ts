@@ -20,10 +20,22 @@ export class FormComponent {
 
   constructor(){
     this.usuariosForm = new FormGroup({
-      first_name: new FormControl( '', [ Validators.required]),
-      last_name: new FormControl( '', []),
-      email: new FormControl( '', []),
-      username: new FormControl( '', []),
+      first_name: new FormControl( '', [ 
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      last_name: new FormControl( '', [
+        Validators.required
+      ]),
+      email: new FormControl( '', [
+        Validators.required,
+
+        Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)
+      ]),
+      username: new FormControl( '', [
+        Validators.minLength(5),
+        Validators.required,
+      ]),
       Image: new FormControl( '', []),
   }, [])
   }
@@ -69,5 +81,9 @@ async getDataForm() {
       Swal.fire('Ha habido un error al insertar el usuario')
     }
   }
+}
+checkError(FormcontrolName: string, validador: string): boolean | undefined {
+  return this.usuariosForm.get(FormcontrolName)?.hasError(validador) && this.usuariosForm.get(FormcontrolName)?.touched
+
 }
 }

@@ -5,18 +5,39 @@
         <div>
             <label class="form-label" for="first_name">Nombre:</label>
             <input class="form-control" type="text" id="first_name" formControlName="first_name">
+            @if (checkError('first_name', 'required')){
+            <p class="error">Campo obligatorio</p>
+            }
+            @if(checkError('first_name', 'minlength')){
+            <p class="error">El campo debe de tener como minimo 3 caracteres</p>
+            }
         </div>
         <div>
             <label class="form-label" for="last_name">Apellidos:</label>
             <input class="form-control" type="text" id="last_name" formControlName="last_name">
+            @if (checkError('first_name', 'required')){
+                <p class="error">Campo obligatorio</p>
+                }
         </div>
         <div>
             <label class="form-label" for="email">Email:</label>
             <input class="form-control" type="email" id="email" formControlName="email">
+            @if(checkError('email', 'required')){
+            <p class="error">El email es obligatorio</p>
+            }
+            @if(checkError('email', 'pattern')){
+            <p class="error">El email no es valido</p>
+            }
         </div>
         <div>
             <label class="form-label" for="username">Usuario:</label>
             <input class="form-control" type="text" id="username" formControlName="username">
+            @if(checkError('username', 'minlength')){
+                <p class="error">El usuario tiene que tener como minimo 5 caracteres</p>
+            }
+            @if(checkError('username', 'required')){
+                <p class="error">El usuario es obligatorio</p>
+            }
         </div>
         <div>
             <label class="form-label" for="image">Imagen</label>
