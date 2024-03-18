@@ -14,11 +14,11 @@ import { BotonesComponent } from '../../components/botones/botones.component';
 })
 export class UsuarioViewComponent {
   
-  activatedRoute = inject(ActivatedRoute)
-  usuariosService = inject(UsuariosService);
-  unUsuario!: IUsuario;
+  private activatedRoute = inject(ActivatedRoute)
+  private usuariosService = inject(UsuariosService);
+  unUsuario!: IUsuario | undefined;
 
-  ngOnInit(): void {
+  ngOnInit(){
     
     this.activatedRoute.params.subscribe(async (params: any) => {
       const id = params.idusuario;
