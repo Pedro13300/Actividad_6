@@ -14,7 +14,7 @@ import { BotonesComponent } from '../../components/botones/botones.component';
 })
 export class UsuarioViewComponent {
   
-  activatedRoute = inject(ActivatedRoute);
+  activatedRoute = inject(ActivatedRoute)
   usuariosService = inject(UsuariosService);
   unUsuario!: IUsuario;
 
