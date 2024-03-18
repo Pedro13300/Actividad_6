@@ -16,7 +16,7 @@ export class BotonesComponent {
  @Input() parent: string = "";
  @Input() idUsuario: string | undefined = "";
  usuariosService = inject(UsuariosService);
- 
+
 
   async eliminarUsuario(id: string | undefined){
     if(id !== undefined) {

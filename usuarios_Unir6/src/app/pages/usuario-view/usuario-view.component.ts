@@ -18,17 +18,19 @@ export class UsuarioViewComponent {
   private usuariosService = inject(UsuariosService);
   unUsuario!: IUsuario | undefined;
 
-  ngOnInit(){
-    
+  ngOnInit(): void {
     this.activatedRoute.params.subscribe(async (params: any) => {
       const id = params.idusuario;
       try {
-        this.unUsuario = await this.usuariosService.getById(id)
-        console.log(this.unUsuario)
+        this.unUsuario = await this.usuariosService.getById(id);
+        if (!this.unUsuario) {
+          throw new Error('Usuario no encontrado');
+        }
+        console.log(this.unUsuario);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    })
+    });
   }
 }
 

@@ -5,15 +5,11 @@
           <img class="img-fluid" src="{{unUsuario?.image}}" alt="{{unUsuario?._id}}">
         </figure>
         <div class="col-12 col-md-9">
-          <h2>Nombre: {{unUsuario?.first_name}}</h2>
-          
-          <p>Apellidos: {{unUsuario?.last_name}}</p>
-          <p>Email: {{unUsuario?.email}}</p>
-          <p>Usuario: {{unUsuario?.username}}</p>
-          <!--<a [routerLink]="['/usuarios', unUsuario.id]" class="btn btn-secondary"><i class="fa-solid fa-arrow-rotate-left"></i>Volver</a>-->
-         
-          
-          <!--<app-botones [parent]="'vista'" [idUsuario]="unUsuario?._id || '' "></app-botones>-->
+          <h2 class="pt-3 fw-bold">Nombre: {{unUsuario?.first_name}}</h2>
+          <p class="pt-3 fw-bold">Apellidos: {{unUsuario?.last_name}}</p>
+          <p class="pt-3 fw-bold">Email: {{unUsuario?.email}}</p>
+          <p class="pt-3 fw-bold">Usuario: {{unUsuario?.username}}</p>
+          <!--<app-botones [parent]="'vista'" [idUsuario]="unUsuario?._id"></app-botones>-->
         </div>
         
       </div>
